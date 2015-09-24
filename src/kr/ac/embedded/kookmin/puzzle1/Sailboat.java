@@ -1,8 +1,7 @@
 package kr.ac.embedded.kookmin.puzzle1;
 
-public class /** **/ /** **/ Boat{
-	public /** **/ {
-		System.out.print(/** **/);
+public class Sailboat extends Boat{
+	public void move() {
+		System.out.print("hoist sail");
 	}
-	
 }
