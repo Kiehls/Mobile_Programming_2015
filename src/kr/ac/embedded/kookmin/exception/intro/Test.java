@@ -4,18 +4,25 @@ import java.io.*;
 
 class Trade {
 	public void readFile() {
+		FileReader reader = null;
+		BufferedReader input = null;
+		
 		try {
-			File afile = new File("C:\\a.txt");
-			FileReader reader = new FileReader(afile);
-			BufferedReader input = new BufferedReader(reader);
+			reader = new FileReader("C:\\a.txt");
+			input = new BufferedReader(reader);
 			String data;
 
 			while ((data = input.readLine()) != null) {
 				System.out.println(data);
 			}
-			input.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				input.close();
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
