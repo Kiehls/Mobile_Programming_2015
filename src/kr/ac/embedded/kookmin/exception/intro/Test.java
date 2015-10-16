@@ -6,7 +6,7 @@ class Trade {
 	public void readFile() {
 		FileReader reader = null;
 		BufferedReader input = null;
-		
+
 		try {
 			reader = new FileReader("C:\\a.txt");
 			input = new BufferedReader(reader);
@@ -20,7 +20,7 @@ class Trade {
 		} finally {
 			try {
 				input.close();
-			} catch(IOException e) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}

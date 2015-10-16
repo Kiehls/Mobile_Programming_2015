@@ -24,8 +24,9 @@ public class DiscountSale extends Sale {
 		discount = theDiscount;
 	}
 	
-	public DiscountSale(DiscountSale originalObject) {
-		/** 구현 하시오 **/ 
+	public DiscountSale(DiscountSale originalObject) {//Question 객체를 확인해야하는데 super 먼저 써버리면 무의미
+		super(originalObject);
+		discount = originalObject.discount;
 	}
 	
 	public static void announcement() {
@@ -52,10 +53,14 @@ public class DiscountSale extends Sale {
 	}
 	
 	public boolean equals(Object otherObject) {
-		if(this == otherObject)
-			return true;
-		else
+		if (otherObject == null)
 			return false;
+		else if (getClass() != otherObject.getClass())
+			return false;
+		else {
+			DiscountSale otherDiscount = (DiscountSale) otherObject;
+			return discount == otherDiscount.discount;
+		}
 	}
 	
 	
